@@ -1,0 +1,27 @@
+#1. Найти в данной папке все файлы, в которых содержится слово python, и вывести на
+#экран имена файлов.
+
+import os
+
+path='Homework 1'
+names=os.listdir (path)
+for n in names:
+    f=open(path+'/'+n,'r')
+    if f.read()=='python':
+        print(n)
+#2. Посчитать общее количество найденных слов и вывести на экран
+
+f=open(path+'/'+'3.txt','r')
+c=len(f.read().split())
+print(c)
+
+
+#3. Записать в файл "result.txt" список найденных файлов и число найденных слов python
+
+c=0
+for n in names:
+    f=open(path+'/'+n,'r')
+    for i in f.read().split(): 
+        if i=='python':
+            c=c+1
+print(c)
